@@ -12,17 +12,18 @@ docker build -t kitterman .
 ## Usage
 
 ```bash
-#docker run --rm kitterman spf.py IP sender_address helo
-docker run --rm kitterman spf.py 10.11.12.13 mail@kitterman.com smtp.kitterman.com
+#docker run --rm kitterman IP sender_address helo
+docker run --rm kitterman 10.11.12.13 mail@kitterman.com smtp.kitterman.com
 
 #Custom SPF
-docker run --rm kitterman spf.py "v=spf1 include:spf.kitterman.com -all" 10.11.12.13 mail@kitterman.com smtp.kitterman.com
+docker run --rm kitterman "v=spf1 include:spf.kitterman.com -all" 10.11.12.13 mail@kitterman.com smtp.kitterman.com
 ```
 Reply
 ```bash
 ('pass', 250, 'sender SPF authorized')
 #or
 ('fail', 550, 'SPF fail - not authorized')
+...etc
 ```
 ## Alias
 Put that into your aliases file
