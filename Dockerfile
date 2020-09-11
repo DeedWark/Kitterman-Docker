@@ -2,7 +2,7 @@ FROM alpine:3.11
 
 MAINTAINER DeedWark "github.com/DeedWark"
 
-RUN apk add python2 &>/dev/null
+RUN apk add --no-cache python2 &>/dev/null
 
 WORKDIR /root/kitterman
 
