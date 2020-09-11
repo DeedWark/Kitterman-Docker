@@ -1,16 +1,18 @@
-FROM photon:latest
+FROM alpine:latest
 
-MAINTAINER me
+MAINTAINER DeedWark "github.com/DeedWark"
 
-RUN tdnf update -y &&\
-    tdnf install -y vim python2 python3 wget &&\
-    tdnf install -y python-pip python3-pip &&\
-    pip install dnspython && pip install pydns
+RUN apk update &&\
+    apk add python2
 
 WORKDIR /root/kitterman
 
 RUN cd /root/kitterman &&\
-    wget http://www.kitterman.com/spf-validate.tar.gz &&\
-    tar xvf spf-validate.tar.gz && rm spf-validate.tar.gz
+    wget https://github.com/DeedWark/Kitterman-Docker/raw/master/spf-validate.tar.gz &&\
+    wget https://bootstrap.pypa.io/get-pip.py &&\
+    tar xvf spf-validate.tar.gz &&\
+    rm spf-validate.tar.gz &&\
+    python get-pip.py && rm get-pip.py &&\
+    pip install dnspython pydns
 
-ENTRYPOINT ["python"]
+ENTRYPOINT ["python","spf.py"]
