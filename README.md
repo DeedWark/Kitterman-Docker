@@ -1,6 +1,6 @@
 # Kitterman-Docker
 
-This is Kitterman in a Docker image
+This is Kitterman SPF python tools in a Docker image -> [DockerHub](https://hub.docker.com/repository/docker/deedwark/kitterman)
 ## Installation
 
 You need docker installed on your machine -> [install](https://docs.docker.com/get-docker/)
