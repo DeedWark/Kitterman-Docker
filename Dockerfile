@@ -7,9 +7,9 @@ RUN apk update &&\
 
 WORKDIR /root/kitterman
 
+COPY spf-python.tar.gz /root/kitterman
+
 RUN cd /root/kitterman &&\
-    wget https://github.com/DeedWark/Kitterman-Docker/raw/master/spf-validate.tar.gz &&\
-    wget https://bootstrap.pypa.io/get-pip.py &&\
     tar xvf spf-validate.tar.gz &&\
     rm spf-validate.tar.gz &&\
     python get-pip.py && rm get-pip.py &&\
