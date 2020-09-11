@@ -2,8 +2,7 @@ FROM alpine:3.11
 
 MAINTAINER DeedWark "github.com/DeedWark"
 
-RUN apk update &&\
-    apk add python2 &>/dev/null
+RUN apk add python2 &>/dev/null
 
 WORKDIR /root/kitterman
 
