@@ -28,7 +28,7 @@ Reply
 ## Alias
 Put that into your aliases file
 ```
-alias kitterman='docker run --rm kitterman spf.py'
+alias kitterman='docker run --rm kitterman'
 ```
 
 Then you can just do
