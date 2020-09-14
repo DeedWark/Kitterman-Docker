@@ -1,23 +1,23 @@
-# Kitterman-Docker
+# SPFtools-Docker
 
-This is Kitterman SPF python tools in a Docker image -> [DockerHub](https://hub.docker.com/repository/docker/deedwark/kitterman)
+SPF python tools in a Docker image -> [DockerHub](https://hub.docker.com/repository/docker/deedwark/spftools)
 ## Installation
 
 You need docker installed on your machine -> [install](https://docs.docker.com/get-docker/)
 
 ```bash
-git clone https://github.com/DeedWark/Kitterman-Docker && cd Kitterman-Docker
-docker build -t kitterman .
+git clone https://github.com/DeedWark/SPFtools-Docker && cd SPFtools-Docker
+docker build -t spftools .
 ```
 
 ## Usage
 
 ```bash
-#docker run --rm kitterman IP sender_address helo
-docker run --rm kitterman 10.11.12.13 mail@kitterman.com smtp.kitterman.com
+#docker run --rm spftools IP sender_address helo
+docker run --rm spftools 10.11.12.13 mail@spftools.com smtp.spftools.com
 
 #Custom SPF
-docker run --rm kitterman "v=spf1 include:spf.kitterman.com -all" 10.11.12.13 mail@kitterman.com smtp.kitterman.com
+docker run --rm spftools "v=spf1 include:spf.spftools.com -all" 10.11.12.13 mail@spftools.com smtp.spftools.com
 ```
 Reply
 ```bash
@@ -29,21 +29,21 @@ Reply
 ## Alias
 Put that into your aliases file
 ```
-alias kitterman='docker run --rm kitterman'
+alias spftools='docker run --rm spftools'
 ```
 
 Then you can just do
 
 - SPF
 ```bash
-#kitterman IP sender helo
-kitterman 10.11.12.13 mail@kitterman.com smtp.kitterman.com
+#spftools IP sender helo
+spftools 10.11.12.13 mail@spftools.com smtp.spftools.com
 ```
 - Custom SPF
 ```bash
-#kitterman "SPF" IP sender helo
-kitterman "v=spf1 include:spf.kitterman.com -all" mail@kitterman.com smtp.kitterman.com
+#spftools "SPF" IP sender helo
+spftools "v=spf1 include:spf.spftools.com -all" mail@spftools.com smtp.spftools.com
 ```
 
-# Official website
+# index website
 [Kitterman](https://www.kitterman.com/spf/validate.html)
