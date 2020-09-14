@@ -6,6 +6,7 @@ This is Kitterman SPF python tools in a Docker image -> [DockerHub](https://hub.
 You need docker installed on your machine -> [install](https://docs.docker.com/get-docker/)
 
 ```bash
+git clone https://www.github.com/DeedWark/Kitterman-Docker && cd Kitterman-Docker
 docker build -t kitterman .
 ```
 
