@@ -45,5 +45,5 @@ spftools 10.11.12.13 mail@spftools.com smtp.spftools.com
 spftools "v=spf1 include:spf.spftools.com -all" mail@spftools.com smtp.spftools.com
 ```
 
-# index website
+# Index website
 [Kitterman](https://www.kitterman.com/spf/validate.html)
