@@ -1,4 +1,4 @@
-#Alpine instead of python img coz of pip install
+#Alpine instead of python-alpine img coz of pip install & gcc...
 FROM alpine:3.11 
 
 LABEL maintainer="DeedWark - github.com/DeedWark"
