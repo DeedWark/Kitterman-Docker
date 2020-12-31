@@ -1,17 +1,20 @@
-FROM alpine:3.11
+#Alpine instead of python img bc of pip install
+FROM alpine:3.11 
 
-MAINTAINER DeedWark "github.com/DeedWark"
+LABEL maintainer="DeedWark - github.com/DeedWark"
 
-RUN apk add --no-cache python2 &>/dev/null
+WORKDIR /opt/kitterman
 
-WORKDIR /root/kitterman
+COPY spf-python.tar.gz /opt/kitterman
 
-COPY spf-python.tar.gz /root/kitterman
-
-RUN cd /root/kitterman &&\
+RUN apk add --no-cache python2 &>/dev/null &&\
+    cd /opt/kitterman &&\
     tar xvf spf-python.tar.gz &&\
     rm spf-python.tar.gz &&\
     python get-pip.py 2>/dev/null && rm get-pip.py &&\
-    pip install dnspython pydns 2>/dev/null
+    pip install dnspython pydns 2>/dev/null &&\
+    adduser -D spfuser && chown -R spfuser:spfuser /opt/kitterman
+
+USER spfuser
 
 ENTRYPOINT ["python","spf.py"]
