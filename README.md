@@ -16,7 +16,7 @@ docker build -t spftools .
 # docker run --rm spftools IP sender_address helo
 docker run --rm spftools 10.11.12.13 mail@spftools.com smtp.spftools.com
 
-#Custom SPF
+# Custom SPF
 docker run --rm spftools "v=spf1 include:spf.spftools.com -all" 10.11.12.13 mail@spftools.com smtp.spftools.com
 ```
 Reply
