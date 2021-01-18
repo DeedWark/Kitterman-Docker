@@ -13,7 +13,7 @@ docker build -t spftools .
 ## Usage
 
 ```bash
-#docker run --rm spftools IP sender_address helo
+# docker run --rm spftools IP sender_address helo
 docker run --rm spftools 10.11.12.13 mail@spftools.com smtp.spftools.com
 
 #Custom SPF
@@ -36,12 +36,12 @@ Then you can just do
 
 - SPF
 ```bash
-#spftools IP sender helo
+# spftools IP sender helo
 spftools 10.11.12.13 mail@spftools.com smtp.spftools.com
 ```
 - Custom SPF
 ```bash
-#spftools "SPF" IP sender helo
+# spftools "SPF" IP sender helo
 spftools "v=spf1 include:spf.spftools.com -all" mail@spftools.com smtp.spftools.com
 ```
 
